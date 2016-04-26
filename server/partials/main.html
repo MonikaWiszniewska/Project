@@ -1,3 +1,12 @@
 <!-- Na tej stronie znajduje się Main screen -->
 
-<h1> dziala</h1>
+<h3> Menu </h3>
+<div id="entry">
+        <div ng-repeat="entry in Menu">
+        <p>{{entry.name}}</p>
+        <div ng-repeat="i in Ingredients">
+            {{i.label}} ,
+        </div>
+        <p>{{entry.price}}</p>
+    </div>
+<div>
