@@ -2,7 +2,7 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
     $stateProvider
     .state('main', {
         url: "/main",
-        controller: 'MenuCrtl',
+        controller: 'MainCrtl',
         templateUrl: "partials/main.html"
     });
 });
