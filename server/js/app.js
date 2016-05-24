@@ -8,7 +8,6 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
     .state('main', {
         url: "/main",
         controller: 'MainCtrl',
-        // controller: function () {},
         templateUrl: "partials/main.html"
     });
 });
