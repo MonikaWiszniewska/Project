@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
+var watch = require('gulp-watch');
 
 
 gulp.task('copy_task', function() {
@@ -59,3 +60,17 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
+gulp.task('stream', function () {
+    return gulp.src('*.html')
+        .pipe(watch('*.html'))
+        .pipe(gulp.dest('../build')),
+         gulp.src('partials/*.html')
+        .pipe(watch('partials/*.html'))
+        .pipe(gulp.dest('../build/partials')),
+        gulp.src('css/*.css')
+        .pipe(watch('css/*.css'))
+        .pipe(gulp.dest('../build/css')),
+        gulp.src('js/*.js')
+        .pipe(watch('js/*.js'))
+        .pipe(gulp.dest('../build/js'));
+});
