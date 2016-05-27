@@ -9,5 +9,10 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
         url: "/main",
         controller: 'MainCtrl',
         templateUrl: "partials/main.html"
+    })
+    .state('menu', {
+        url: "/menu",
+        controller: 'MenuCtrl',
+        templateUrl: "partials/menu.html"
     });
 });
