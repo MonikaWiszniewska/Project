@@ -7,7 +7,7 @@ module.exports = [
     },
     {
         id: 2,
-        name: 'Funghi ',
+        name: 'Funghi',
         ingredients: [1, 2, 3],
         price: 16.90
     },

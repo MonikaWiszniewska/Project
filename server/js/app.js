@@ -7,12 +7,29 @@ angular.module('myapp', ['ui.router']).config(function ($stateProvider, $urlRout
     $stateProvider
     .state('main', {
         url: "/main",
-        controller: 'MainCtrl',
-        templateUrl: "partials/main.html"
+        views: {
+        	'': {templateUrl: "partials/main.html",
+        		controller: 'MainCtrl'},
+    		'cart': {templateUrl: "partials/cart.html",
+    			controller: 'MenuCtrl'}
+    		}
     })
     .state('menu', {
         url: "/menu",
-        controller: 'MenuCtrl',
-        templateUrl: "partials/menu.html"
-    });
+        views: {
+        	'': {templateUrl: "partials/menu.html",
+        		controller: 'MenuCtrl'},
+    		'cart': {templateUrl: "partials/cart.html",
+    			controller: 'MenuCtrl'}
+    		}
+    })
+    .state('finalizeorder', {
+        url: "/finalizeorder",
+        views: {
+        	'cart': {templateUrl: "partials/cart.html",
+    			controller: 'MenuCtrl'},
+    		'': {templateUrl: "partials/finalizeorder.html",
+        		controller: 'OrderCtrl'},
+			}
+    })
 });

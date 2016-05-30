@@ -1,0 +1,40 @@
+<!--  template dla koszyka -->
+
+<div id="showHideCart" style="cursor: pointer; position: absolute; top:40px; right: 200px;"></div>
+    
+
+<div ng-show="cartTotal !== 0" class="cart" style="position: absolute; top: 80px; right: 20px;">
+
+<p>
+	<table>
+	<thead>
+	<td width="300px"></td>
+	<td width="30px"></td>
+	<td width="30px"></td>
+	<td width="30px"></td>
+	</thead>
+	<tbody>
+	<tr ng-repeat="i in Cart track by $index">
+		<td>{{i.item.name}},	{{i.item.price}} x {{i.count}} = {{i.subPrice}}</td>
+		<td><span ng-click="addItem(i.item.id)" title="Zwieksz ilość" style="cursor: pointer;">+</span></td>
+		<td><span ng-click="decrement(i.item.id)" title="Zmniejsz ilość" style="cursor: pointer;">-</span></td>
+		<td><span ng-click="deleteItem(i.item.id)"title="usuń" style="cursor: pointer;">x</span></td>
+	</tr>
+	<tr><td colspan="4"></td></tr>
+	<tr>
+		<td><b>Razem: {{cartTotal}} PLN</b>
+		<div id="clearCart" style="cursor: pointer; position: relative; float: right;">Wyczyść koszyk</div>
+		</td>
+		<td colspan="3"><a ng-href="#/finalizeorder">Zamów</a></td>
+	</tr>
+	</tbody>
+	</table>
+
+	
+	
+</div>
+<div ng-show="cartTotal == 0" class="cart" style="position: absolute; top: 80px; right: 20px;">
+	
+	Twoj koszyk jest pusty.
+	
+	</div>

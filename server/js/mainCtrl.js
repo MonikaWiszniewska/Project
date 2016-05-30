@@ -6,7 +6,6 @@ angular.module('myapp').controller('MainCtrl', function ($scope, menu, ingredien
     ingredients.getIngredients().then(function(data) {
     	$scope.Ingredients = data.data;
     });
-//     console.log(menu.getItems());
-//    $scope.Menu = menu;
-//    $scope.Ingredients = ingredients;
+    
+    
 })

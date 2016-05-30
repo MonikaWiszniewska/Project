@@ -1,34 +1,42 @@
 <h3>Menu</h3>
 <div id="entry">
+
 	<table>
-	<thead>
-		<td>Nazwa:</td>
-		<td>Składniki:</td>
-		<td>Cena:</td>
-	</thead>
-	<tbody>
-	
-		<tr ng-repeat="pizza in Menu">
-			
-			<td>
-			<div>{{pizza.name}}</div>
-			</td>
-			<td width="250">
-			<div ng-repeat="skl_id in pizza.ingredients track by $index">
+		<thead>
+			<td>Nazwa:</td>
+			<td>Składniki:</td>
+			<td>Cena:</td>
+			<td></td>
+		</thead>
+		<tbody>
 
-				<div ng-repeat="i in Ingredients track by $index" style="position: relative; float: left;">
+			<tr ng-repeat="pizza in Menu">
 
-					<span ng-if="skl_id == i.id">{{i.label}},&nbsp;</span>
+				<td>
+					<div>{{pizza.name}}</div>
+				</td>
+				<td width="250">
+					<div ng-repeat="skl_id in pizza.ingredients track by $index">
 
-				</div>
+						<div ng-repeat="i in Ingredients track by $index"
+							style="position: relative; float: left;">
 
-			</div>
-			</td>
-			<td>
-			<p>{{pizza.price}}</p>
-			</td>
-	</td>
-		</tr>
+							<span ng-if="skl_id == i.id">{{i.label}},&nbsp;</span>
+
+						</div>
+
+					</div>
+				</td>
+				<td>
+					<p>{{pizza.price}}</p>
+				</td>
+				<td><a style="cursor: pointer;" ng-click="addItem(pizza.id)">Dodaj</a></td>
+
+			</tr>
 		</tbody>
 	</table>
+
+
+
+
 </div>
