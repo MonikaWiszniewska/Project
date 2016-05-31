@@ -1,11 +1,15 @@
-angular.module('myapp').controller('OrderCtrl', function ($state, $scope, menu, ingredients) {
+angular.module('myapp').controller('OrderCtrl', function ($state, $scope, menu, ingredients, order) {
+    $scope.orderData = {};
     menu.getItems().then(function (data) {
        $scope.Menu = data.data; });
+       
        $scope.submitForm = function(form){
         if(form.$valid) {
-            console.log($scope.phone);
-             console.log($scope.street);
-             console.log($scope.remarks);
+            order.sendOrder($scope.orderData).then(function (data) {
+               console.log(data); 
+            $scope.id = data.data; 
+            });
+            console.log($scope.id);
         }
        }
        $scope.back = function(){
