@@ -3,15 +3,19 @@
 
 <form name="formName" >
      <label>phone number:
-        <input type="number" name="phoneNumber" ng-model="orderData.phone" required/>
+        <input type="number" name="phoneNumber" ng-model="orderInfo.phone" required/>
      </label> <br /> 
      <label>street name:
-        <input type="text" name="streetName" ng-model="orderData.street" required/>
+        <input type="text" name="streetName" ng-model="orderInfo.street" required/>
      </label>  <br />
      <label>remarks:
-        <textarea ng-model="remarks"></textarea>
+        <textarea ng-model="orderInfo.remarks"></textarea>
      </label>  <br />
     <button type="submit" ng-click="submitForm(formName)">Order</button>
 </form>
 
 <button type="submit" ng-click="back()">Back</button>
+
+{{errorMessage}}
+
+{{Test}}
