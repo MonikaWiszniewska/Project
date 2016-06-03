@@ -6,3 +6,11 @@ angular.module('myapp').factory('order', function($http) {
 		}
 	};
 });
+
+angular.module('myapp').factory('orderStatus', function($http) {
+	return {
+		getOrderStatus : function getOrderStatus(orderId) {
+			return $http.get('/order/' + orderId);
+		}
+	};
+});

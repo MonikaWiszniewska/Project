@@ -34,9 +34,9 @@ angular.module('myapp').controller('OrderCtrl', function ($state, $scope, menu, 
         $scope.submitForm = function(form){
             if(form.$valid) {
                 order.sendOrder(orderData).then(function (result) {
-                console.log(result); 
+                //console.log(result); 
                 $scope.id = result.data.id; 
-                
+                $state.go('status', {orderId: $scope.id});
                 console.log($scope.id);
             }, function(error) {
             $scope.errorMessage = "Błąd wysyłania " + error.message;
