@@ -1,4 +1,4 @@
-angular.module('myapp').controller('StatusCtrl', function ($scope, $stateParams, orderStatus) {
+angular.module('myapp').controller('StatusCtrl', function ($scope, $stateParams, $state, orderStatus) {
 
     //console.log($stateParams.orderId);
     
@@ -14,4 +14,8 @@ angular.module('myapp').controller('StatusCtrl', function ($scope, $stateParams,
             $scope.result = "Pizza już puka do drzwi";
         }
     });
+    
+    $scope.back = function(){
+            $state.go('menu');
+        };
 })

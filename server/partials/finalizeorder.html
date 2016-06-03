@@ -1,21 +1,27 @@
 <!-- Na tej stronie znajduje się Finalize order -->
 
-
 <form name="formName" >
-     <label>phone number:
-        <input type="number" name="phoneNumber" ng-model="orderInfo.phone" required/>
-     </label> <br /> 
-     <label>street name:
-        <input type="text" name="streetName" ng-model="orderInfo.street" required/>
-     </label>  <br />
-     <label>remarks:
-        <textarea ng-model="orderInfo.remarks"></textarea>
-     </label>  <br />
-    <button type="submit" ng-click="submitForm(formName)">Order</button>
+<table>
+  <tr>
+    <td><label>phone number:</label></td>
+    <td><input type="number" name="phoneNumber" ng-model="orderInfo.phone" required/></td>
+  </tr>
+  <tr>
+    <td><label>street name:</label></td>
+    <td> <input type="text" name="streetName" ng-model="orderInfo.street" required/></td>
+  </tr>
+  <tr>
+    <td><label>remarks:</label></td>
+    <td><textarea ng-model="orderInfo.remarks"></textarea></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button type="submit" ng-click="submitForm(formName)">Order</button></td>
+  </tr>
+</table>
+    
 </form>
 
 <button type="submit" ng-click="back()">Back</button>
 
 {{errorMessage}}
-
-{{Test}}
